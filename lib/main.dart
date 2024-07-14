@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nike_sneakers/constants/app_color.dart';
 
 import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
 import 'package:nike_sneakers/constants/typography.dart';
+import 'package:nike_sneakers/shared_widgets/buttons.dart';
+import 'package:nike_sneakers/shared_widgets/google_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -127,6 +130,12 @@ class _MyHomePageState extends State<MyHomePage> {
               "Hello World",
               style: AppTypography.ralewayheadingLarge,
             ),
+            PrimaryButton(
+              onPressed: () {},
+              bText: "Hello",
+              bColor: AppColor.primaryColor,
+            ),
+            GoogleButton(onPressed: () {}, bText: "Sign In with Google"),
             Text(
               "Hello World",
               style: AppTypography.ralewayheadingSemiLarge,
