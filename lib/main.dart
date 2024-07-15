@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nike_sneakers/constants/app_color.dart';
+import 'package:nike_sneakers/constants/typography.dart';
 
 void main() {
   runApp(const MyApp());
@@ -108,9 +110,33 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.ralewayheadingSemiLarge,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.ralewayMediumHeadingSemiLarge,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.ralewayMediumHeadingLarge,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.ralewayHeadingLarge,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.popinsParagraphRegular,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.popinsMediumParagraphRegular,
+            ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: TextStyle(color: AppColor.secondaryColor),
             ),
           ],
         ),
