@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nike_sneakers/constants/app_color.dart';
+import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
-
 import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
+import 'package:nike_sneakers/shared_widgets/counter_button.dart';
+import 'package:nike_sneakers/shared_widgets/primary_button.dart';
+import 'package:nike_sneakers/shared_widgets/google_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -146,12 +150,20 @@ class _MyHomePageState extends State<MyHomePage> {
             //Image.asset(AppImages.googleLogo),
             //Image.asset(AppImages.shoe001),
             // Image.asset(AppImages.paymentSuccesful),
-            Image.asset(AppImages.shoe006),
+            //Image.asset(AppImages.shoe006),
             // Image.asset(AppImages.debitCard),
+            // DeleteButton(onPressed: () {}),
+            CounterButton(onIncrement: () {}, onDecrement: () {}, text: "1"),
             Text(
               "Hello World",
               style: AppTypography.ralewayheadingLarge,
             ),
+            PrimaryButton(
+              onPressed: () {},
+              text: "Hello",
+              color: AppColor.primaryColor,
+            ),
+            GoogleButton(onPressed: () {}, text: "Sign In with Google"),
             Text(
               "Hello World",
               style: AppTypography.ralewayheadingSemiLarge,

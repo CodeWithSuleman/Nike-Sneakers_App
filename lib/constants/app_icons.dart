@@ -9,6 +9,8 @@ class AppIcons {
   static const String signature = '$_basiImageUrl/signature.svg';
   static const String signOut = '$_basiImageUrl/signOut.svg';
   static const String star = '$_basiImageUrl/star.svg';
+  static const String add = '$_basiImageUrl/add.svg';
+  static const String minus = '$_basiImageUrl/minus.svg';
   static const String time = '$_basiImageUrl/Time.svg';
   static const String notification = '$_basiImageUrl/notification.svg';
   static const String phone = '$_basiImageUrl/phone.svg';
