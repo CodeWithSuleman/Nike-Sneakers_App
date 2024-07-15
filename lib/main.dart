@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nike_sneakers/constants/app_icons.dart';
+import 'package:nike_sneakers/constants/app_images.dart';
+
 import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
 
@@ -80,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
+        actions: [SvgPicture.asset(AppIcons.signature)],
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
@@ -138,13 +143,30 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: TextStyle(color: AppColor.secondaryColor),
             ),
+            //Image.asset(AppImages.googleLogo),
+            //Image.asset(AppImages.shoe001),
+            // Image.asset(AppImages.paymentSuccesful),
+            Image.asset(AppImages.shoe006),
+            // Image.asset(AppImages.debitCard),
+            Text(
+              "Hello World",
+              style: AppTypography.ralewayheadingLarge,
+            ),
+            Text(
+              "Hello World",
+              style: AppTypography.ralewayheadingSemiLarge,
+            ),
+            Text(
+              "Hello World",
+              style: AppTypography.popinsParagraphRegular,
+            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: SvgPicture.asset(AppIcons.cart),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
