@@ -126,17 +126,17 @@ class _MyHomePageState extends State<MyHomePage> {
             //Image.asset(AppImages.shoe006),
             // Image.asset(AppImages.debitCard),
             // DeleteButton(onPressed: () {}),
-            CounterButton(onPressed: () {}, bText: "1"),
+            CounterButton(onIncrement: () {}, onDecrement: () {}, text: "1"),
             Text(
               "Hello World",
               style: AppTypography.ralewayheadingLarge,
             ),
             PrimaryButton(
               onPressed: () {},
-              bText: "Hello",
-              bColor: AppColor.primaryColor,
+              text: "Hello",
+              color: AppColor.primaryColor,
             ),
-            GoogleButton(onPressed: () {}, bText: "Sign In with Google"),
+            GoogleButton(onPressed: () {}, text: "Sign In with Google"),
             Text(
               "Hello World",
               style: AppTypography.ralewayheadingSemiLarge,
