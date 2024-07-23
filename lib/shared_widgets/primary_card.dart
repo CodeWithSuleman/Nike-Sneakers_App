@@ -2,22 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
 
-class PrimaryCard extends StatelessWidget {
+class PrimaryCard extends StatefulWidget {
   final String image;
   final String price;
   final String shoeName;
   final String shoeCategory;
-  final IconButton iconButton;
-  final Function() onTap;
   const PrimaryCard({
     super.key,
     required this.image,
     required this.price,
     required this.shoeName,
-    required this.iconButton,
     required this.shoeCategory,
-    required this.onTap,
   });
+
+  @override
+  State<PrimaryCard> createState() => _PrimaryCardState();
+}
+
+class _PrimaryCardState extends State<PrimaryCard> {
+  bool _isFavorite = false;
+  void _toggleFavorite() {
+    setState(() {
+      _isFavorite = !_isFavorite;
+    });
+    print("Navigation");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +45,15 @@ class PrimaryCard extends StatelessWidget {
         color: AppColor.whiteColor,
         child: Stack(
           children: [
-            iconButton,
+            IconButton(
+              onPressed: _toggleFavorite,
+              icon: Icon(
+                _isFavorite ? Icons.favorite : Icons.favorite_border,
+                color: _isFavorite ? Colors.red : Colors.grey,
+              ),
+            ),
             Image.asset(
-              image,
+              widget.image,
               height: deviceHeight * 0.269,
               width: deviceWidth * 0.540,
             ),
@@ -46,7 +61,7 @@ class PrimaryCard extends StatelessWidget {
               left: 10,
               top: 180,
               child: Text(
-                shoeCategory,
+                widget.shoeCategory,
                 style: AppTypography.popinsParagraphRegular
                     .copyWith(color: AppColor.primaryColor),
               ),
@@ -55,7 +70,7 @@ class PrimaryCard extends StatelessWidget {
               left: 10,
               top: 200,
               child: Text(
-                shoeName,
+                widget.shoeName,
                 style: AppTypography.popinsParagraphRegular
                     .copyWith(color: AppColor.secondaryColor),
               ),
@@ -63,13 +78,14 @@ class PrimaryCard extends StatelessWidget {
             Positioned(
               left: 10,
               top: 220,
-              child: Text(price, style: AppTypography.popinsParagraphRegular),
+              child: Text(widget.price,
+                  style: AppTypography.popinsParagraphRegular,),
             ),
             Positioned(
               left: 143,
               top: 208,
               child: GestureDetector(
-                onTap: onTap,
+                onTap: () {},
                 child: Container(
                     height: deviceHeight * 0.06,
                     width: deviceWidth * 0.12,
@@ -83,7 +99,7 @@ class PrimaryCard extends StatelessWidget {
                     child: const Icon(
                       Icons.add,
                       color: AppColor.whiteColor,
-                    )),
+                    ),),
               ),
             )
           ],

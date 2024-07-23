@@ -119,15 +119,10 @@ class _MyHomePageState extends State<MyHomePage> {
             //   autoCorrect: true,
             // ),
             PrimaryCard(
-              onTap: (){},
               image: AppImages.shoe003,
               price: "\$300",
               shoeName: "Nike Jordan",
               shoeCategory: "Best Sellar",
-              iconButton: IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(AppIcons.heart),
-              ),
             ),
             const Text(
               'You have pushed the button this many times:',
