@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
 import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
-import 'package:nike_sneakers/shared_widgets/counter_button.dart';
-import 'package:nike_sneakers/shared_widgets/primary_button.dart';
-import 'package:nike_sneakers/shared_widgets/google_button.dart';
+import 'package:nike_sneakers/shared_widgets/primary_textfield.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +62,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController _controller = TextEditingController();
   int _counter = 0;
 
   void _incrementCounter() {
@@ -116,6 +114,12 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            PrimaryTextfield(
+              onPressed: () {},
+              text: "Email",
+              controller: _controller,
+              autoCorrect: true,
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
@@ -153,24 +157,10 @@ class _MyHomePageState extends State<MyHomePage> {
             //Image.asset(AppImages.shoe006),
             // Image.asset(AppImages.debitCard),
             // DeleteButton(onPressed: () {}),
-            CounterButton(onIncrement: () {}, onDecrement: () {}, text: "1"),
+
             Text(
               "Hello World",
               style: AppTypography.ralewayheadingLarge,
-            ),
-            PrimaryButton(
-              onPressed: () {},
-              text: "Hello",
-              color: AppColor.primaryColor,
-            ),
-            GoogleButton(onPressed: () {}, text: "Sign In with Google"),
-            Text(
-              "Hello World",
-              style: AppTypography.ralewayheadingSemiLarge,
-            ),
-            Text(
-              "Hello World",
-              style: AppTypography.popinsParagraphRegular,
             ),
           ],
         ),
