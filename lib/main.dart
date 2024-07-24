@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nike_sneakers/constants/app_icons.dart';
+import 'package:nike_sneakers/constants/app_icons.dart';
+import 'package:nike_sneakers/constants/app_images.dart';
+import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
 import 'package:nike_sneakers/shared_widgets/primary_textfield.dart';
 
@@ -120,9 +123,33 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.ralewayheadingSemiLarge,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.ralewayMediumHeadingSemiLarge,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.ralewayMediumHeadingLarge,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.ralewayHeadingLarge,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.popinsParagraphRegular,
+            ),
+            const Text(
+              'You have pushed the button this many times:',
+              style: AppTypography.popinsMediumParagraphRegular,
+            ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: TextStyle(color: AppColor.secondaryColor),
             ),
             //Image.asset(AppImages.googleLogo),
             //Image.asset(AppImages.shoe001),
@@ -130,32 +157,18 @@ class _MyHomePageState extends State<MyHomePage> {
             //Image.asset(AppImages.shoe006),
             // Image.asset(AppImages.debitCard),
             // DeleteButton(onPressed: () {}),
-            //CounterButton(onPressed: () {}, bText: "1"),
+
             Text(
               "Hello World",
               style: AppTypography.ralewayheadingLarge,
             ),
-            // PrimaryButton(
-            //   onPressed: () {},
-            //   bText: "Hello",
-            //   bColor: AppColor.primaryColor,
-            // ),
-            // GoogleButton(onPressed: () {}, bText: "Sign In with Google"),
-            // Text(
-            //   "Hello World",
-            //   style: AppTypography.ralewayheadingSemiLarge,
-            // ),
-            // Text(
-            //   "Hello World",
-            //   style: AppTypography.popinsParagraphRegular,
-            // ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: SvgPicture.asset(AppIcons.downArrow),
+        child: SvgPicture.asset(AppIcons.cart),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
