@@ -21,4 +21,11 @@ class AppTypography {
       letterSpacing: 1.2,
       fontFamily: _popoins,
       height: 1.5);
+
+  static const TextStyle ralewayParagraphRegular = TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 1.2,
+      fontFamily: _raleway,
+      height: 1.5);
 }

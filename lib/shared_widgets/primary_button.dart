@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
 
 class PrimaryButton extends StatelessWidget {
-  final VoidCallback onPressed;
+  final Function() onPressed;
   final Color? bColor;
   final double? bWidth;
   final double? bHeight;
@@ -20,7 +21,7 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: bWidth ?? MediaQuery.of(context).size.width * 0.9,
-      height: bHeight ?? MediaQuery.of(context).size.height * 0.08,
+      height: bHeight ?? MediaQuery.of(context).size.height * 0.07,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -31,7 +32,8 @@ class PrimaryButton extends StatelessWidget {
         ),
         child: Text(
           bText,
-          style: AppTypography.popinsParagraphRegular,
+          style: AppTypography.ralewayParagraphRegular
+              .copyWith(color: AppColor.whiteColor),
         ),
       ),
     );

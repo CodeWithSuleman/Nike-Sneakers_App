@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nike_sneakers/screens/splash_screen.dart';
+// import 'package:nike_sneakers/screens/forgot_screen.dart';
+import 'package:nike_sneakers/screens/login_screen.dart';
+// import 'package:nike_sneakers/screens/otp_verification_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreen(),
+      // home: SignUpScreen(),
+      // home: OtpVerificationScreen(),
+      home: LogInScreen(),
     );
   }
 }

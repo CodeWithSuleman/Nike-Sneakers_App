@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
 import 'package:nike_sneakers/constants/typography.dart';
 
@@ -20,7 +21,7 @@ class GoogleButton extends StatelessWidget {
     final double deviceWidth = MediaQuery.of(context).size.width;
     return SizedBox(
       width: bWidth ?? MediaQuery.of(context).size.width * 0.9,
-      height: bHeight ?? MediaQuery.of(context).size.height * 0.08,
+      height: bHeight ?? MediaQuery.of(context).size.height * 0.07,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -31,14 +32,12 @@ class GoogleButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(
-              AppImages.googleLogo,
-              height: deviceHight * 0.04,
-            ),
+            Image.asset(AppImages.googleLogo, height: deviceHight * 0.03),
             SizedBox(width: deviceWidth * 0.04),
             Text(
               bText,
-              style: AppTypography.popinsParagraphRegular,
+              style: AppTypography.ralewayParagraphRegular
+                  .copyWith(color: AppColor.blackColor),
             ),
           ],
         ),

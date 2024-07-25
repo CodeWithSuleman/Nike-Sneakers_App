@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:nike_sneakers/constants/app_color.dart';
 
 class PrimaryTextfield extends StatelessWidget {
   final String text;
+  final String? label;
   final VoidCallback onPressed;
   final Icon? icon;
   final bool autoCorrect;
+  final bool obscureText;
   final Color? color;
   final TextInputType? keyBoardType;
   final TextEditingController controller;
@@ -19,6 +22,8 @@ class PrimaryTextfield extends StatelessWidget {
     this.keyBoardType,
     required this.autoCorrect,
     this.color,
+    this.label,
+    required this.obscureText,
   });
 
   @override
@@ -29,15 +34,21 @@ class PrimaryTextfield extends StatelessWidget {
         keyboardType: keyBoardType,
         controller: controller,
         autocorrect: autoCorrect,
+        obscureText: obscureText,
         decoration: InputDecoration(
-          labelText: text,
+          labelText: label,
           hintText: text,
           prefixIcon: icon,
           suffix: suffix,
           filled: true,
           fillColor: color,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: AppColor.transparentColor),
+            borderRadius: BorderRadius.circular(17),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(17),
+            borderSide: const BorderSide(color: AppColor.transparentColor),
           ),
         ),
       ),
