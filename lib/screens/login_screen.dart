@@ -109,7 +109,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     },
                     child: Text(
                       "Recovery Password",
-                      style: AppTypography.ralewayParagraphRegular.copyWith(
+                      style: AppTypography.popinsParagraphRegularSmall.copyWith(
                         color: AppColor.blackColor.withOpacity(0.5),
                       ),
                     ),
@@ -146,7 +146,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     child: Text(
                       "Create Account",
                       style: AppTypography.ralewayParagraphRegular.copyWith(
-                        color: AppColor.blackColor.withOpacity(0.9),
+                        color: AppColor.blackColor,
                       ),
                     ),
                   ),

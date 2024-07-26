@@ -5,7 +5,7 @@ class PrimaryTextfield extends StatelessWidget {
   final String text;
   final String? label;
   final VoidCallback onPressed;
-  final Icon? icon;
+  final Widget? prefix;
   final bool autoCorrect;
   final bool obscureText;
   final Color? color;
@@ -16,7 +16,7 @@ class PrimaryTextfield extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.icon,
+    this.prefix,
     this.suffix,
     required this.controller,
     this.keyBoardType,
@@ -38,7 +38,7 @@ class PrimaryTextfield extends StatelessWidget {
         decoration: InputDecoration(
           labelText: label,
           hintText: text,
-          prefixIcon: icon,
+          prefixIcon: prefix,
           suffix: suffix,
           filled: true,
           fillColor: color,

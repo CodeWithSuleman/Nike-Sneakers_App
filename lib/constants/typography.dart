@@ -15,8 +15,20 @@ class AppTypography {
       letterSpacing: 1.2,
       fontFamily: _raleway,
       height: 1.5);
+  static const TextStyle ralewayheadingSemiLargeMedium = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 1.2,
+      fontFamily: _raleway,
+      height: 1.5);
   static const TextStyle popinsParagraphRegular = TextStyle(
       fontSize: 16,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 1.2,
+      fontFamily: _popoins,
+      height: 1.5);
+  static const TextStyle popinsParagraphRegularSmall = TextStyle(
+      fontSize: 12,
       fontWeight: FontWeight.w600,
       letterSpacing: 1.2,
       fontFamily: _popoins,
@@ -25,6 +37,12 @@ class AppTypography {
   static const TextStyle ralewayParagraphRegular = TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w600,
+      letterSpacing: 1.2,
+      fontFamily: _raleway,
+      height: 1.5);
+  static const TextStyle ralewayParagraphRegularSmall = TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
       letterSpacing: 1.2,
       fontFamily: _raleway,
       height: 1.5);

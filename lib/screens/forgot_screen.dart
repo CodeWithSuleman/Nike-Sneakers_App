@@ -81,13 +81,16 @@ class ForgotScreen extends StatelessWidget {
               SizedBox(height: deviceHeight * 0.03),
               const Text(
                 "Check your email",
-                style: AppTypography.popinsParagraphRegular,
+                style: AppTypography.ralewayParagraphRegular,
               ),
             ],
           ),
-          content: const Text(
-            "\t\tWe have sent a password recovery code to your email",
-            style: AppTypography.popinsParagraphRegular,
+          content: Opacity(
+            opacity: 0.5,
+            child: Text(
+              "\t\tWe have sent a password recovery code to your email",
+              style: AppTypography.popinsParagraphRegular,
+            ),
           ),
         );
       },

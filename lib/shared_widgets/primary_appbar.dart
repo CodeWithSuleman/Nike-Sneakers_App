@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_sneakers/constants/app_color.dart';
+import 'package:nike_sneakers/constants/typography.dart';
 
 class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? centerTitle;
@@ -24,7 +25,10 @@ class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: AppBar(
         centerTitle: centerTitle,
-        title: Text(title ?? ""),
+        title: Text(
+          title ?? "",
+          style: AppTypography.ralewayheadingLarge,
+        ),
         actions: actions,
         leading: leading ??
             CircleAvatar(

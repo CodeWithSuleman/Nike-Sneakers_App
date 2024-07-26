@@ -20,7 +20,7 @@ class OtpVerificationScreen extends StatelessWidget {
       appBar: PrimaryAppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 0),
+          padding: const EdgeInsets.symmetric(horizontal: 4),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -58,7 +58,7 @@ class OtpVerificationScreen extends StatelessWidget {
                 length: 4,
                 showCursor: true,
                 defaultPinTheme: PinTheme(
-                  textStyle: AppTypography.ralewayParagraphRegular,
+                  textStyle: AppTypography.ralewayheadingSemiLarge,
                   width: deviceWidth * 0.17,
                   height: deviceHeight * 0.08,
                   margin: const EdgeInsets.symmetric(horizontal: 7),
@@ -74,19 +74,20 @@ class OtpVerificationScreen extends StatelessWidget {
                 bText: "Verify",
                 bColor: AppColor.primaryColor,
               ),
+              SizedBox(height: deviceHeight * 0.01),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(width: deviceWidth * 0.04),
                   Text(
                     "Resend code",
-                    style: AppTypography.ralewayParagraphRegular.copyWith(
-                      color: AppColor.blackColor.withOpacity(0.4),
+                    style: AppTypography.ralewayParagraphRegularSmall.copyWith(
+                      color: AppColor.blackColor,
                     ),
                   ),
-                  SizedBox(width: deviceWidth * 0.5),
                   Text("00:30",
-                      style: AppTypography.ralewayParagraphRegular.copyWith(
-                        color: AppColor.blackColor.withOpacity(0.4),
+                      style:
+                          AppTypography.ralewayParagraphRegularSmall.copyWith(
+                        color: AppColor.blackColor,
                       )),
                 ],
               )

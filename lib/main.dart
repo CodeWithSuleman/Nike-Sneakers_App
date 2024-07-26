@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nike_sneakers/screens/home_screen.dart';
 // import 'package:nike_sneakers/screens/forgot_screen.dart';
-import 'package:nike_sneakers/screens/login_screen.dart';
+// import 'package:nike_sneakers/screens/login_screen.dart';
 // import 'package:nike_sneakers/screens/otp_verification_screen.dart';
 
 void main() {
@@ -14,9 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home: SignUpScreen(),
+      // home: LogInScreen(),
       // home: OtpVerificationScreen(),
-      home: LogInScreen(),
+      home: HomeScreen(),
     );
   }
 }
