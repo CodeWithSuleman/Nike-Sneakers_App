@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nike_sneakers/constants/app_icons.dart';
+import 'package:nike_sneakers/constants/app_images.dart';
+
 import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
 import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
-import 'package:nike_sneakers/shared_widgets/primary_textfield.dart';
+import 'package:nike_sneakers/shared_widgets/primary_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,7 +64,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController _controller = TextEditingController();
+  // TextEditingController _controller = TextEditingController();
   int _counter = 0;
 
   void _incrementCounter() {
@@ -114,11 +116,17 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            PrimaryTextfield(
-              onPressed: () {},
-              text: "Email",
-              controller: _controller,
-              autoCorrect: true,
+            // PrimaryTextfield(
+            //   onPressed: () {},
+            //   text: "Email",
+            //   controller: _controller,
+            //   autoCorrect: true,
+            // ),
+            PrimaryCard(
+              image: AppImages.shoe003,
+              price: "\$300",
+              shoeName: "Nike Jordan",
+              shoeCategory: "Best Sellar",
             ),
             const Text(
               'You have pushed the button this many times:',

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:nike_sneakers/constants/app_color.dart';
 
 class AppTypography {
   static const _raleway = 'Raleway';
   static const _popoins = 'Popins';
 
+  static const TextStyle ralewayheadingSemiLarge = TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 1.2,
+      fontFamily: _raleway,
+      height: 1.5);
   static const TextStyle ralewayMediumHeadingLarge = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,
