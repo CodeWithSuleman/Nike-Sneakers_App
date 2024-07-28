@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:nike_sneakers/Utilities/extension.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
 import 'package:nike_sneakers/constants/typography.dart';
 
 class GoogleButton extends StatelessWidget {
-  final VoidCallback onPressed;
-  final double? bWidth;
-  final double? bHeight;
-  final String bText;
+  final Function() onPressed;
+  final double? width;
+  final double? height;
+  final String text;
   const GoogleButton(
       {super.key,
       required this.onPressed,
-      this.bWidth,
-      this.bHeight,
-      required this.bText});
+      this.width,
+      this.height,
+      required this.text});
 
   @override
   Widget build(BuildContext context) {
-    final double deviceHight = MediaQuery.of(context).size.height;
-    final double deviceWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: bWidth ?? MediaQuery.of(context).size.width * 0.9,
-      height: bHeight ?? MediaQuery.of(context).size.height * 0.08,
+      width: width ?? context.screenWidth * 0.9,
+      height: height ?? context.screenHeight * 0.08,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -33,11 +32,11 @@ class GoogleButton extends StatelessWidget {
           children: [
             Image.asset(
               AppImages.googleLogo,
-              height: deviceHight * 0.04,
+              height: context.screenHeight * 0.04,
             ),
-            SizedBox(width: deviceWidth * 0.04),
+            SizedBox(width: context.screenWidth * 0.04),
             Text(
-              bText,
+              text,
               style: AppTypography.popinsParagraphRegular,
             ),
           ],
