@@ -28,4 +28,5 @@ class AppIcons {
   static const String cart = '$_basicImageUrl/cart.svg';
   static const String circle = '$_basicImageUrl/circle.svg';
   static const String backArrow = '$_basicImageUrl/back_arrow.svg';
+  static const String more = '$_basicImageUrl/more.svg';
 }
