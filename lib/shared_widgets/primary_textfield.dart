@@ -7,6 +7,7 @@ class PrimaryTextfield extends StatelessWidget {
   final VoidCallback onPressed;
   final Widget? prefix;
   final bool autoCorrect;
+  final bool readOnly;
   final bool obscureText;
   final Color? color;
   final TextInputType? keyBoardType;
@@ -24,6 +25,7 @@ class PrimaryTextfield extends StatelessWidget {
     this.color,
     this.label,
     required this.obscureText,
+    this.readOnly = false,
   });
 
   @override
@@ -35,6 +37,7 @@ class PrimaryTextfield extends StatelessWidget {
         controller: controller,
         autocorrect: autoCorrect,
         obscureText: obscureText,
+        readOnly: readOnly,
         decoration: InputDecoration(
           labelText: label,
           hintText: text,

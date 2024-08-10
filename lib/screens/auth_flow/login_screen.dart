@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
-import 'package:nike_sneakers/screens/login_screen.dart';
+import 'package:nike_sneakers/screens/auth_flow/forgot_screen.dart';
+import 'package:nike_sneakers/screens/bottom_nav_bar.dart';
 import 'package:nike_sneakers/shared_widgets/google_button.dart';
 import 'package:nike_sneakers/shared_widgets/primary_appbar.dart';
 import 'package:nike_sneakers/shared_widgets/primary_button.dart';
 import 'package:nike_sneakers/shared_widgets/primary_textfield.dart';
+import 'package:nike_sneakers/screens/auth_flow/signup_screen.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class LogInScreen extends StatefulWidget {
+  const LogInScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _LogInScreenState();
+  State<LogInScreen> createState() => _LogInScreenState();
 }
 
-class _LogInScreenState extends State<SignUpScreen> {
+class _LogInScreenState extends State<LogInScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passController = TextEditingController();
-  final TextEditingController nameController = TextEditingController();
   bool _obscureText = true;
 
   @override
@@ -26,42 +27,26 @@ class _LogInScreenState extends State<SignUpScreen> {
     final deviceWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: PrimaryAppBar(),
+      appBar: const PrimaryAppBar(
+        leading: SizedBox(),
+      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Column(
             children: [
+              //SizedBox(height: deviceHeight * 0.1),
               const Text(
-                "Register Account!",
+                "Hello Again!",
                 style: AppTypography.ralewayheadingLarge,
               ),
               Text(
                 "Fill your details or continue with \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tsocial media",
                 style: AppTypography.popinsParagraphRegular.copyWith(
-                  color: AppColor.blackColor.withOpacity(0.5),
+                  color: AppColor.greyColor,
                 ),
               ),
-              SizedBox(height: deviceHeight * 0.01),
-              Row(
-                children: [
-                  SizedBox(
-                    width: deviceWidth * 0.04,
-                    height: deviceHeight * 0.06,
-                  ),
-                  const Text(
-                    "Your Name",
-                    style: AppTypography.ralewayParagraphRegular,
-                  ),
-                ],
-              ),
-              PrimaryTextfield(
-                obscureText: false,
-                text: "Name",
-                onPressed: () {},
-                controller: emailController,
-                autoCorrect: true,
-              ),
+              SizedBox(height: deviceHeight * 0.04),
               Row(
                 children: [
                   SizedBox(
@@ -113,37 +98,66 @@ class _LogInScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ForgotScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Recovery Password",
+                      style: AppTypography.popinsParagraphRegularSmall.copyWith(
+                        color: AppColor.blackColor.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: deviceHeight * 0.02),
               PrimaryButton(
-                onPressed: () {},
-                bText: "SignUp",
-                bColor: AppColor.primaryColor,
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavBarScreen(),
+                    ),
+                  );
+                },
+                text: "SignIn",
+                textColor: AppColor.whiteColor,
+                color: AppColor.primaryColor,
               ),
               SizedBox(height: deviceHeight * 0.04),
               GoogleButton(onPressed: () {}, bText: "Sign In with Google "),
-              SizedBox(height: deviceHeight * 0.04),
+              SizedBox(height: deviceHeight * 0.1),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "Already Have an account?",
+                    "New User?",
                     style: AppTypography.ralewayParagraphRegular.copyWith(
                       color: AppColor.blackColor.withOpacity(0.6),
                     ),
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LogInScreen(),
+                          builder: (context) => const SignUpScreen(),
                         ),
                       );
                     },
                     child: Text(
-                      "LogIn",
+                      "Create Account",
                       style: AppTypography.ralewayParagraphRegular.copyWith(
-                        color: AppColor.blackColor.withOpacity(0.9),
+                        color: AppColor.blackColor,
                       ),
                     ),
                   ),

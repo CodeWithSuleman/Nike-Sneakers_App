@@ -2,107 +2,115 @@ import 'package:flutter/material.dart';
 import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
 
-class PrimaryCard extends StatefulWidget {
+class PrimaryCard extends StatelessWidget {
   final String image;
   final String price;
   final String shoeName;
   final String shoeCategory;
+  final Function() onFavoriteTap;
+  final BorderRadiusGeometry? borderRadius;
+  final Widget? customFooter;
+  final bool isFavorite;
+  final double? cardHight;
+  final double? cardWidth;
   const PrimaryCard({
     super.key,
     required this.image,
     required this.price,
     required this.shoeName,
+    required this.onFavoriteTap,
+    required this.isFavorite,
     required this.shoeCategory,
+    this.customFooter,
+    this.borderRadius,
+    this.cardHight,
+    this.cardWidth,
   });
-
-  @override
-  State<PrimaryCard> createState() => _PrimaryCardState();
-}
-
-class _PrimaryCardState extends State<PrimaryCard> {
-  bool _isFavorite = false;
-  void _toggleFavorite() {
-    setState(() {
-      _isFavorite = !_isFavorite;
-    });
-    print("Navigation");
-  }
 
   @override
   Widget build(BuildContext context) {
     final double deviceHeight = MediaQuery.of(context).size.height;
     final double deviceWidth = MediaQuery.of(context).size.width;
-    return Container(
-      height: deviceHeight * 0.340,
-      width: deviceWidth * 0.540,
+    return SizedBox(
+      height: cardHight ?? deviceHeight * 0.340,
+      width: cardWidth ?? deviceWidth * 0.540,
       child: Card(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(30),
-            topLeft: Radius.circular(30),
-          ),
+        shape: RoundedRectangleBorder(
+          borderRadius: borderRadius ??
+              const BorderRadius.only(
+                bottomRight: Radius.circular(30),
+                topLeft: Radius.circular(30),
+              ),
         ),
         color: AppColor.whiteColor,
-        child: Stack(
-          children: [
-            IconButton(
-              onPressed: _toggleFavorite,
-              icon: Icon(
-                _isFavorite ? Icons.favorite : Icons.favorite_border,
-                color: _isFavorite ? Colors.red : Colors.grey,
+        child: Container(
+          padding: const EdgeInsets.only(top: 10, left: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: deviceWidth,
+                alignment: Alignment.centerLeft,
+                child: InkWell(
+                  onTap: onFavoriteTap,
+                  child: Icon(
+                    isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: isFavorite ? AppColor.redColor : AppColor.greyColor,
+                  ),
+                ),
               ),
-            ),
-            Image.asset(
-              widget.image,
-              height: deviceHeight * 0.269,
-              width: deviceWidth * 0.540,
-            ),
-            Positioned(
-              left: 10,
-              top: 180,
-              child: Text(
-                widget.shoeCategory,
-                style: AppTypography.popinsParagraphRegular
+              Center(
+                child: Image.asset(
+                  // fit: BoxFit.fitWidth,
+                  fit: BoxFit.fitHeight,
+                  image,
+                  // width: 140,
+                  height: deviceHeight * 0.16,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                shoeCategory,
+                style: AppTypography.popinsParagraphRegularSmall
                     .copyWith(color: AppColor.primaryColor),
               ),
-            ),
-            Positioned(
-              left: 10,
-              top: 200,
-              child: Text(
-                widget.shoeName,
-                style: AppTypography.popinsParagraphRegular
-                    .copyWith(color: AppColor.secondaryColor),
+              Text(
+                shoeName,
+                style: AppTypography.ralewayParagraphRegular.copyWith(
+                  color: AppColor.blackColor.withOpacity(0.5),
+                ),
               ),
-            ),
-            Positioned(
-              left: 10,
-              top: 220,
-              child: Text(widget.price,
-                  style: AppTypography.popinsParagraphRegular,),
-            ),
-            Positioned(
-              left: 143,
-              top: 208,
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                    height: deviceHeight * 0.06,
-                    width: deviceWidth * 0.12,
-                    decoration: const BoxDecoration(
-                      color: AppColor.primaryColor,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    price,
+                    style: AppTypography.popinsParagraphRegular,
+                  ),
+                  customFooter ??
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: deviceHeight * 0.06,
+                          width: deviceWidth * 0.12,
+                          decoration: const BoxDecoration(
+                            color: AppColor.primaryColor,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.add,
+                            color: AppColor.whiteColor,
+                          ),
+                        ),
                       ),
-                    ),
-                    child: const Icon(
-                      Icons.add,
-                      color: AppColor.whiteColor,
-                    ),),
+                ],
               ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

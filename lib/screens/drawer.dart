@@ -53,6 +53,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             title: "Profile",
+            textColor: AppColor.whiteColor,
             onTap: () {},
           ),
           PrimaryListTile(
@@ -64,6 +65,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             title: "My Cart",
+            textColor: AppColor.whiteColor,
             onTap: () {},
           ),
           PrimaryListTile(
@@ -75,6 +77,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             title: "Favorite",
+            textColor: AppColor.whiteColor,
             onTap: () {},
           ),
           PrimaryListTile(
@@ -86,6 +89,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             title: "Orders",
+            textColor: AppColor.whiteColor,
             onTap: () {},
           ),
           PrimaryListTile(
@@ -97,6 +101,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             title: "Notification",
+            textColor: AppColor.whiteColor,
             onTap: () {},
           ),
           PrimaryListTile(
@@ -108,6 +113,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             title: "Settings",
+            textColor: AppColor.whiteColor,
             onTap: () {},
           ),
           SizedBox(height: deviceHeight * 0.02),
@@ -126,6 +132,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
             title: "Sign Out",
+            textColor: AppColor.whiteColor,
             onTap: () {},
           ),
         ],

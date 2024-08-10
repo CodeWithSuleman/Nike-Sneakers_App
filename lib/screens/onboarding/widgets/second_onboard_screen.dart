@@ -4,11 +4,9 @@ import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
 import 'package:nike_sneakers/constants/typography.dart';
-import 'package:nike_sneakers/shared_widgets/primary_button.dart';
 
 class SecondOnboardScreen extends StatelessWidget {
-  final PageController pageController;
-  const SecondOnboardScreen({super.key, required this.pageController});
+  const SecondOnboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,16 +76,16 @@ class SecondOnboardScreen extends StatelessWidget {
                   .copyWith(color: AppColor.whiteColor.withOpacity(0.8)),
             ),
           ),
-          Positioned(
-            top: 690,
-            child: PrimaryButton(
-                onPressed: () {
-                  pageController.nextPage(
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeIn);
-                },
-                bText: "Next"),
-          ),
+          // Positioned(
+          //   top: 690,
+          //   child: PrimaryButton(
+          //       onPressed: () {
+          //         pageController.nextPage(
+          //             duration: const Duration(milliseconds: 500),
+          //             curve: Curves.easeIn);
+          //       },
+          //       bText: "Next"),
+          // ),
         ],
       ),
     );

@@ -4,11 +4,9 @@ import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
 import 'package:nike_sneakers/constants/typography.dart';
-import 'package:nike_sneakers/shared_widgets/primary_button.dart';
 
 class FirstOnboardScreen extends StatelessWidget {
-  final PageController pageController;
-  const FirstOnboardScreen({super.key, required this.pageController});
+  const FirstOnboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,18 +54,7 @@ class FirstOnboardScreen extends StatelessWidget {
               height: deviceHeight * 0.8,
             ),
           ),
-          Positioned(
-            top: 690,
-            left: 20,
-            child: PrimaryButton(
-              onPressed: () {
-                pageController.nextPage(
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeIn);
-              },
-              bText: "Get Started",
-            ),
-          ),
+          
         ],
       ),
     );

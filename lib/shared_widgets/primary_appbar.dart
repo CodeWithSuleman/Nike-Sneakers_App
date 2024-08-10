@@ -7,6 +7,8 @@ class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final String? title;
   final Widget? leading;
+  final Color? color;
+  final TextStyle? textStyle;
 
   const PrimaryAppBar({
     super.key,
@@ -14,30 +16,36 @@ class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
     this.title,
     this.leading,
+    this.textStyle,
+    this.color,
   });
 
   @override
-  Size get preferredSize => Size.fromHeight(50);
+  Size get preferredSize => const Size.fromHeight(50);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: AppBar(
+        backgroundColor: AppColor.whiteColor,
         centerTitle: centerTitle,
         title: Text(
           title ?? "",
-          style: AppTypography.ralewayheadingLarge,
+          style: textStyle ?? AppTypography.ralewayheadingLarge,
         ),
         actions: actions,
         leading: leading ??
             CircleAvatar(
-              backgroundColor: AppColor.blackColor.withOpacity(0.1),
-              child: IconButton(
-                onPressed: () {
+              backgroundColor: color ?? AppColor.whiteColor.withOpacity(0.1),
+              child: GestureDetector(
+                onTap: () {
                   Navigator.pop(context);
                 },
-                icon: const Icon(Icons.arrow_back_ios),
+                child: const Icon(
+                  Icons.arrow_back_ios_new,
+                  size: 17.0,
+                ),
               ),
             ),
       ),

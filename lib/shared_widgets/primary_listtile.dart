@@ -1,27 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:nike_sneakers/constants/app_color.dart';
-import 'package:nike_sneakers/constants/typography.dart';
 
 class PrimaryListTile extends StatelessWidget {
-  final Widget leading;
+  final Widget? leading;
+  final Widget? trailing;
   final String title;
-  final Function() onTap;
+  final Widget? subTitle;
+  final TextStyle? titleTextStyle;
+  final TextStyle? subTextStyle;
+  final Color? textColor;
+  final Function()? onTap;
   const PrimaryListTile(
       {super.key,
       required this.leading,
       required this.title,
-      required this.onTap});
+      this.onTap,
+      this.trailing,
+      this.subTitle,
+      this.textColor,
+      this.titleTextStyle,
+      this.subTextStyle, });
 
   @override
   Widget build(BuildContext context) {
+    // final double deviceHeight = MediaQuery.of(context).size.height;
+    // final double deviceWidth = MediaQuery.of(context).size.width;
     return ListTile(
+      subtitleTextStyle: subTextStyle,
+      titleTextStyle: titleTextStyle,
+      textColor: textColor,
       leading: leading,
-      title: Text(
-        title,
-        style: AppTypography.ralewayParagraphRegular
-            .copyWith(color: AppColor.whiteColor),
-      ),
+      title: Text(title),
+      
       onTap: onTap,
+      trailing: trailing,
+      subtitle: subTitle,
     );
   }
 }

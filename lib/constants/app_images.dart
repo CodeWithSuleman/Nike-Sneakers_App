@@ -3,7 +3,8 @@ class AppImages {
 
   static const String googleLogo = '$_baseImageUrl/google_logo.png';
   static const String debitCard = '$_baseImageUrl/debit_card.png';
-  static const String paymentSuccesful = '$_baseImageUrl/payment_succesful.png';
+  static const String paymentSuccessful =
+      '$_baseImageUrl/payment_successful.png';
   static const String profile = '$_baseImageUrl/profile.png';
   static const String shoe001 = '$_baseImageUrl/shoe001.png';
   static const String shoe002 = '$_baseImageUrl/shoe002.png';
@@ -14,4 +15,6 @@ class AppImages {
   static const String shoe007 = '$_baseImageUrl/shoe007.png';
   static const String shoe008 = '$_baseImageUrl/shoe008.png';
   static const String shoe009 = '$_baseImageUrl/shoe009.png';
+  static const String shoe = '$_baseImageUrl/show.svg';
+  static const String map = '$_baseImageUrl/map.png';
 }

@@ -4,11 +4,9 @@ import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/app_images.dart';
 import 'package:nike_sneakers/constants/typography.dart';
-import 'package:nike_sneakers/shared_widgets/primary_button.dart';
 
 class ThirdOnboardScreen extends StatelessWidget {
-  final PageController pageController;
-  const ThirdOnboardScreen({super.key, required this.pageController});
+  const ThirdOnboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,16 +61,22 @@ class ThirdOnboardScreen extends StatelessWidget {
                   .copyWith(color: AppColor.whiteColor.withOpacity(0.8)),
             ),
           ),
-          Positioned(
-            top: 690,
-            child: PrimaryButton(
-                onPressed: () {
-                  pageController.nextPage(
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeIn);
-                },
-                bText: "Next"),
-          ),
+          // Positioned(
+          //   top: 690,
+          //   child: PrimaryButton(
+          //       onPressed: () {
+          //         pageController.nextPage(
+          //             duration: const Duration(milliseconds: 500),
+          //             curve: Curves.easeIn);
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const LogInScreen(),
+                  //   ),
+                  // );
+          //       },
+          //       bText: "Next"),
+          // ),
         ],
       ),
     );

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nike_sneakers/constants/app_color.dart';
+import 'package:nike_sneakers/constants/app_icons.dart';
 import 'package:nike_sneakers/constants/typography.dart';
-import 'package:nike_sneakers/screens/otp_verification_screen.dart';
+import 'package:nike_sneakers/screens/auth_flow/otp_verification_screen.dart';
 import 'package:nike_sneakers/shared_widgets/primary_appbar.dart';
 import 'package:nike_sneakers/shared_widgets/primary_button.dart';
 import 'package:nike_sneakers/shared_widgets/primary_textfield.dart';
@@ -24,7 +26,6 @@ class ForgotScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Column(
             children: [
-              SizedBox(height: deviceHeight * 0.1),
               const Text(
                 "Forgot Password",
                 style: AppTypography.ralewayheadingLarge,
@@ -44,12 +45,16 @@ class ForgotScreen extends StatelessWidget {
                 autoCorrect: true,
               ),
               SizedBox(height: deviceHeight * 0.02),
-              PrimaryButton(
-                onPressed: () {
-                  _showResetPassDialog(context);
-                },
-                bText: "Reset Password",
-                bColor: AppColor.primaryColor,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30),
+                child: PrimaryButton(
+                  textColor: AppColor.whiteColor,
+                  onPressed: () {
+                    _showResetPassDialog(context);
+                  },
+                  text: "Reset Password",
+                  color: AppColor.primaryColor,
+                ),
               ),
             ],
           ),
@@ -60,6 +65,7 @@ class ForgotScreen extends StatelessWidget {
 
   void _showResetPassDialog(BuildContext context) {
     showDialog(
+      barrierColor: AppColor.blackColor.withOpacity(0.2),
       context: context,
       builder: (BuildContext context) {
         Future.delayed(Duration(milliseconds: 1000), () {
@@ -74,9 +80,15 @@ class ForgotScreen extends StatelessWidget {
         return AlertDialog(
           title: Column(
             children: [
-              const Icon(
-                Icons.mail_rounded,
-                color: AppColor.primaryColor,
+              CircleAvatar(
+                backgroundColor: AppColor.primaryColor,
+                child: SvgPicture.asset(
+                  AppIcons.email,
+                  colorFilter: const ColorFilter.mode(
+                    AppColor.whiteColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
               ),
               SizedBox(height: deviceHeight * 0.03),
               const Text(
@@ -85,7 +97,7 @@ class ForgotScreen extends StatelessWidget {
               ),
             ],
           ),
-          content: Opacity(
+          content: const Opacity(
             opacity: 0.5,
             child: Text(
               "\t\tWe have sent a password recovery code to your email",

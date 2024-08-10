@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:nike_sneakers/constants/app_color.dart';
 import 'package:nike_sneakers/constants/typography.dart';
-import 'package:nike_sneakers/screens/forgot_screen.dart';
+import 'package:nike_sneakers/screens/auth_flow/login_screen.dart';
 import 'package:nike_sneakers/shared_widgets/google_button.dart';
 import 'package:nike_sneakers/shared_widgets/primary_appbar.dart';
 import 'package:nike_sneakers/shared_widgets/primary_button.dart';
 import 'package:nike_sneakers/shared_widgets/primary_textfield.dart';
-import 'package:nike_sneakers/screens/signup_screen.dart';
 
-class LogInScreen extends StatefulWidget {
-  const LogInScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LogInScreen> createState() => _LogInScreenState();
+  State<SignUpScreen> createState() => _LogInScreenState();
 }
 
-class _LogInScreenState extends State<LogInScreen> {
+class _LogInScreenState extends State<SignUpScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
   bool _obscureText = true;
 
   @override
@@ -32,9 +32,8 @@ class _LogInScreenState extends State<LogInScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Column(
             children: [
-              //SizedBox(height: deviceHeight * 0.1),
               const Text(
-                "Hello Again!",
+                "Register Account!",
                 style: AppTypography.ralewayheadingLarge,
               ),
               Text(
@@ -43,7 +42,26 @@ class _LogInScreenState extends State<LogInScreen> {
                   color: AppColor.blackColor.withOpacity(0.5),
                 ),
               ),
-              SizedBox(height: deviceHeight * 0.04),
+              SizedBox(height: deviceHeight * 0.01),
+              Row(
+                children: [
+                  SizedBox(
+                    width: deviceWidth * 0.04,
+                    height: deviceHeight * 0.06,
+                  ),
+                  const Text(
+                    "Your Name",
+                    style: AppTypography.ralewayParagraphRegular,
+                  ),
+                ],
+              ),
+              PrimaryTextfield(
+                obscureText: false,
+                text: "Name",
+                onPressed: () {},
+                controller: emailController,
+                autoCorrect: true,
+              ),
               Row(
                 children: [
                   SizedBox(
@@ -95,58 +113,45 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ForgotScreen(),
-                        ),
-                      );
-                    },
-                    child: Text(
-                      "Recovery Password",
-                      style: AppTypography.popinsParagraphRegularSmall.copyWith(
-                        color: AppColor.blackColor.withOpacity(0.5),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
               SizedBox(height: deviceHeight * 0.02),
               PrimaryButton(
-                onPressed: () {},
-                bText: "SignIn",
-                bColor: AppColor.primaryColor,
+                textColor: AppColor.whiteColor,
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LogInScreen(),
+                    ),
+                  );
+                },
+                text: "SignUp",
+                color: AppColor.primaryColor,
               ),
               SizedBox(height: deviceHeight * 0.04),
               GoogleButton(onPressed: () {}, bText: "Sign In with Google "),
-              SizedBox(height: deviceHeight * 0.1),
+              SizedBox(height: deviceHeight * 0.04),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "New User?",
+                    "Already Have an account?",
                     style: AppTypography.ralewayParagraphRegular.copyWith(
                       color: AppColor.blackColor.withOpacity(0.6),
                     ),
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const SignUpScreen(),
+                          builder: (context) => const LogInScreen(),
                         ),
                       );
                     },
                     child: Text(
-                      "Create Account",
+                      "LogIn",
                       style: AppTypography.ralewayParagraphRegular.copyWith(
-                        color: AppColor.blackColor,
+                        color: AppColor.blackColor.withOpacity(0.9),
                       ),
                     ),
                   ),
